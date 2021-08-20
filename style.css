@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+header p {
+  padding: 30px 0 0 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.content {
+  display: flex;
+}
+
+.image-container,
+.information-container {
+  width: 50%;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 60%;
+  height: fit-content;
+}
+
+.customization-options section {
+  margin: 40px 0;
+}
+
+.customization-options p {
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.customization-options button {
+  background-color: transparent;
+  padding: 10px 10px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.253);
+  margin-right: 3px;
+  transition: 0.3s ease-out all;
+  cursor: pointer;
+}
+
+.customization-options button:hover {
+  background-color: black;
+  color: white;
+}
+
+.price-calculation {
+  width: 50%;
+}
+
+.price-calculation div {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+  padding: 0 5px 10px 5px;
+}
+
+.price-calculation .dark-line {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.568);
+}
+
+.price-calculation p {
+  font-weight: 700;
+}
+
+.promo-section {
+  margin-top: 30px;
+}
+
+.promo-section p {
+  font-weight: 700;
+  color: rgb(104, 104, 104);
+  margin: 5px 0;
+}
+
+.promo-section input {
+  padding: 10px 5px;
+  width: 250px;
+}
+
+.promo-section button {
+  background-color: rgb(182, 0, 0);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s ease-out all;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.164);
+  padding: 10px 0;
+  margin: 30px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}

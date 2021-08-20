@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iMac Product Page</title>
+    <!-- Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="container">
+      <!-- Content Area -->
+      <div class="content">
+        <!-- Image container -->
+        <section class="image-container">
+          <img src="./mac-min.png" alt="MacBook Pro" />
+        </section>
+        <!-- Information container -->
+        <main class="information-container">
+          <!-- Heading Content -->
+          <header>
+            <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
+            <p>
+              Apple M1 chip with 8-core CPU with 4 performance cores and 4
+              efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB
+              unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports
+              Magic Mouse Magic Keyboard US English
+            </p>
+          </header>
+          <div class="customization-options">
+            <!-- Memory Information -->
+            <section>
+              <p>Memory</p>
+              <button id="btn-memory-8GB">8GB unified memory</button>
+              <button id="btn-memory-16GB">16GB unified memory</button>
+            </section>
+            <!-- Storage Information -->
+            <section>
+              <p>Storage</p>
+              <button id="btn-storage-256GB">256GB SSD storage</button>
+              <button id="btn-storage-512GB">512GB SSD storage</button>
+              <button id="btn-storage-1TB">1TB SSD storage</button>
+            </section>
+            <!-- Delivery Information -->
+            <section>
+              <p>Choose your delivery option</p>
+              <button id="btn-delivery-free">
+                Friday, Aug 25 FREE Prime Delivery
+              </button>
+              <button id="btn-delivery-$20">
+                Friday, Aug 21 Delivery charge $20
+              </button>
+            </section>
+          </div>
+          <!-- Price Calculation -->
+          <section class="price-calculation">
+            <div>
+              <p>Base Price</p>
+              <p>$<span id="cost-base">1299</span></p>
+            </div>
+            <div>
+              <p>Extra Memory Cost</p>
+              <p>$<span id="cost-memory">0</span></p>
+            </div>
+            <div>
+              <p>Extra Storage Cost</p>
+              <p>$<span id="cost-storage">0</span></p>
+            </div>
+            <div class="dark-line">
+              <p>Delivery Charge</p>
+              <p>$<span id="cost-delivery">0</span></p>
+            </div>
+            <div>
+              <p>Total Price</p>
+              <p>$<span id="price-total">1299</span></p>
+            </div>
+          </section>
+          <!-- Promo Code Input -->
+          <section class="promo-section">
+            <p>Add Promo code</p>
+            <div>
+              <input type="text" />
+              <button>Apply</button>
+            </div>
+          </section>
+        </main>
+      </div>
+      <!-- Total Price -->
+      <footer>
+        <h2>Total: $<span class="price-final">1299</span></h2>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
