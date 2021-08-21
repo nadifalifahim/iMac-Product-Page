@@ -37,12 +37,8 @@ const btnPromoVerify = document.getElementById("btn-promo-verify");
 const finalPriceField = document.getElementById("price-final");
 
 // Functions
-// Function: Display price according to inputs
-function displayPrice(variableName, fieldName, amountToSet){
-    variableName.addEventListener("click", function(){
-    fieldName.innerText = amountToSet;
-
-    // Set Total Price
+// Function: Set Total Price
+function setTotalPrice(){
     const getBasePrice = parseInt(basePriceField.innerText);
     const getMemoryPrice = parseInt(memoryField.innerText);
     const getStoragePrice = parseInt(storageField.innerText);
@@ -50,9 +46,33 @@ function displayPrice(variableName, fieldName, amountToSet){
 
     const totalPrice = getBasePrice + getMemoryPrice + getStoragePrice + getDeliveryPrice;
     totalPriceField.innerText = totalPrice;
-})
 }
 
+// Function Verify Promo
+function verifyPromo(promoCode){
+    if(promoField.value.toLowerCase() == promoCode.toLowerCase()){
+        finalPriceField.innerText = parseFloat(totalPriceField.innerText) * (0.80)
+    } else {
+        finalPriceField.innerText = parseFloat(totalPriceField.innerText)
+    }
+}
+
+// Function: Display price according to inputs
+function displayPrice(variableName, fieldName, amountToSet){
+    variableName.addEventListener("click", function(){
+    fieldName.innerText = amountToSet;
+    setTotalPrice();
+    verifyPromo("stevekaku");
+    })
+}
+
+// Promo Code Verification
+btnPromoVerify.addEventListener("click", function(){
+    verifyPromo("stevekaku");
+})
+
+
+// Input Handling
 // Memory Input Actions
 displayPrice(btnMemory8GB, memoryField, 0);
 displayPrice(btnMemory16GB, memoryField, 180);
