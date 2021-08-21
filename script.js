@@ -38,39 +38,46 @@ const finalPriceField = document.getElementById("price-final");
 
 // Functions
 // Function: Set Total Price
-function setTotalPrice(){
-    const getBasePrice = parseInt(basePriceField.innerText);
-    const getMemoryPrice = parseInt(memoryField.innerText);
-    const getStoragePrice = parseInt(storageField.innerText);
-    const getDeliveryPrice = parseInt(deliveryField.innerText);
+function setTotalPrice() {
+  const getBasePrice = parseInt(basePriceField.innerText);
+  const getMemoryPrice = parseInt(memoryField.innerText);
+  const getStoragePrice = parseInt(storageField.innerText);
+  const getDeliveryPrice = parseInt(deliveryField.innerText);
 
-    const totalPrice = getBasePrice + getMemoryPrice + getStoragePrice + getDeliveryPrice;
-    totalPriceField.innerText = totalPrice;
+  const totalPrice =
+    getBasePrice + getMemoryPrice + getStoragePrice + getDeliveryPrice;
+  totalPriceField.innerText = totalPrice;
 }
 
 // Function Verify Promo
-function verifyPromo(promoCode){
-    if(promoField.value.toLowerCase() == promoCode.toLowerCase()){
-        finalPriceField.innerText = parseFloat(totalPriceField.innerText) * (0.80)
-    } else {
-        finalPriceField.innerText = parseFloat(totalPriceField.innerText)
-    }
+function verifyPromo(promoCode) {
+  if (promoField.value.toLowerCase() == promoCode.toLowerCase()) {
+    finalPriceField.innerText = parseFloat(totalPriceField.innerText) * 0.8;
+  } else {
+    finalPriceField.innerText = parseFloat(totalPriceField.innerText);
+  }
 }
 
 // Function: Display price according to inputs
-function displayPrice(variableName, fieldName, amountToSet){
-    variableName.addEventListener("click", function(){
+function displayPrice(variableName, fieldName, amountToSet) {
+  variableName.addEventListener("click", function (e) {
     fieldName.innerText = amountToSet;
     setTotalPrice();
     verifyPromo("stevekaku");
-    })
+    const children = e.target.parentNode.children;
+    for (let i = 0; i < children.length; i++) {
+      if (children[i].classList == "button-pressed") {
+        children[i].classList.remove("button-pressed");
+      }
+    }
+    e.target.classList.add("button-pressed");
+  });
 }
 
 // Promo Code Verification
-btnPromoVerify.addEventListener("click", function(){
-    verifyPromo("stevekaku");
-})
-
+btnPromoVerify.addEventListener("click", function () {
+  verifyPromo("stevekaku");
+});
 
 // Input Handling
 // Memory Input Actions
