@@ -53,6 +53,7 @@ function setTotalPrice() {
 function verifyPromo(promoCode) {
   if (promoField.value.toLowerCase() == promoCode.toLowerCase()) {
     finalPriceField.innerText = parseFloat(totalPriceField.innerText) * 0.8;
+    promoField.value = "";
   } else {
     finalPriceField.innerText = parseFloat(totalPriceField.innerText);
   }
